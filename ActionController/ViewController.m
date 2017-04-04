@@ -7,25 +7,28 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "ActionSheetVC.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    
+    ActionSheetVC *view;
+    
+}
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
 
 
-    NSLog(@"34234");
+- (IBAction)getTheView:(UIButton *)sender {
+    
+    view = [[ActionSheetVC alloc] initWithDatePicker];
+    [self presentViewController:view animated:false completion:nil];
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

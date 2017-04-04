@@ -13,7 +13,8 @@
 		DC7266F81E93BB1E003FFF09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7266F61E93BB1E003FFF09 /* Main.storyboard */; };
 		DC7266FA1E93BB1E003FFF09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7266F91E93BB1E003FFF09 /* Assets.xcassets */; };
 		DC7266FD1E93BB1E003FFF09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7266FB1E93BB1E003FFF09 /* LaunchScreen.storyboard */; };
-		DC7267061E93C3B8003FFF09 /* ViewController121.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7267051E93C3B8003FFF09 /* ViewController121.m */; };
+		DC7267061E93C3B8003FFF09 /* ActionSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7267051E93C3B8003FFF09 /* ActionSheetVC.m */; };
+		DC7267091E93C534003FFF09 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7267081E93C534003FFF09 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		DC7266F91E93BB1E003FFF09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC7266FC1E93BB1E003FFF09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC7266FE1E93BB1E003FFF09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC7267041E93C3B8003FFF09 /* ViewController121.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController121.h; sourceTree = "<group>"; };
-		DC7267051E93C3B8003FFF09 /* ViewController121.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController121.m; sourceTree = "<group>"; };
+		DC7267041E93C3B8003FFF09 /* ActionSheetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetVC.h; sourceTree = "<group>"; };
+		DC7267051E93C3B8003FFF09 /* ActionSheetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetVC.m; sourceTree = "<group>"; };
+		DC7267081E93C534003FFF09 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7267091E93C534003FFF09 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +50,7 @@
 			children = (
 				DC7266EC1E93BB1E003FFF09 /* ActionController */,
 				DC7266EB1E93BB1E003FFF09 /* Products */,
+				DC7267071E93C534003FFF09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,8 +69,8 @@
 				DC7266F11E93BB1E003FFF09 /* AppDelegate.m */,
 				DC7266F31E93BB1E003FFF09 /* ViewController.h */,
 				DC7266F41E93BB1E003FFF09 /* ViewController.m */,
-				DC7267041E93C3B8003FFF09 /* ViewController121.h */,
-				DC7267051E93C3B8003FFF09 /* ViewController121.m */,
+				DC7267041E93C3B8003FFF09 /* ActionSheetVC.h */,
+				DC7267051E93C3B8003FFF09 /* ActionSheetVC.m */,
 				DC7266F61E93BB1E003FFF09 /* Main.storyboard */,
 				DC7266F91E93BB1E003FFF09 /* Assets.xcassets */,
 				DC7266FB1E93BB1E003FFF09 /* LaunchScreen.storyboard */,
@@ -82,6 +86,14 @@
 				DC7266EE1E93BB1E003FFF09 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC7267071E93C534003FFF09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC7267081E93C534003FFF09 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7266F51E93BB1E003FFF09 /* ViewController.m in Sources */,
-				DC7267061E93C3B8003FFF09 /* ViewController121.m in Sources */,
+				DC7267061E93C3B8003FFF09 /* ActionSheetVC.m in Sources */,
 				DC7266F21E93BB1E003FFF09 /* AppDelegate.m in Sources */,
 				DC7266EF1E93BB1E003FFF09 /* main.m in Sources */,
 			);
