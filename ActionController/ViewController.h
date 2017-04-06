@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActionSheetVC.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <UIPopoverPresentationControllerDelegate,UpdateDateLabelDelegate>
 
 - (IBAction)getTheView:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 

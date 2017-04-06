@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aj9-jQ-C1Y">
-                                <rect key="frame" x="16" y="0.0" width="343" height="30"/>
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ydO-9X-3Jd"/>
                                 </constraints>
@@ -32,14 +32,29 @@
                                     <action selector="getTheView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bzt-qJ-X5t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-Yv-qvP">
+                                <rect key="frame" x="16" y="66" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pXU-z6-haY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Aj9-jQ-C1Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ci2-47-9m9"/>
+                            <constraint firstItem="lhK-Yv-qvP" firstAttribute="top" secondItem="Aj9-jQ-C1Y" secondAttribute="bottom" constant="8" id="OkK-Mg-0Rk"/>
                             <constraint firstItem="Aj9-jQ-C1Y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VEb-X7-6jg"/>
-                            <constraint firstItem="Aj9-jQ-C1Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gP4-yu-MmK"/>
+                            <constraint firstItem="lhK-Yv-qvP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fFu-lx-8Qb"/>
+                            <constraint firstItem="Aj9-jQ-C1Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="gP4-yu-MmK"/>
+                            <constraint firstItem="lhK-Yv-qvP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yqd-9J-7zS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="lhK-Yv-qvP" id="yrM-TV-gs0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

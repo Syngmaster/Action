@@ -14,6 +14,8 @@
 
 @implementation ActionSheetVC
 
+//create an instance of DatePicker for choosing a date or time
+
 - (instancetype)initWithDatePicker;
 {
     self = [super init];
@@ -64,6 +66,9 @@
     
     return self;
 }
+
+
+// create an instance of PickerView to choose a value from a custom component
 
 -(instancetype) initWithPicker {
     
@@ -116,23 +121,35 @@
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_toolView(50)]-5-[_pickView]-<=50-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:NSDictionaryOfVariableBindings(_toolView,_pickView)]];
         
     }
+    
+    //settings of the popoverVC size and presentation style
+    
     self.modalPresentationStyle = UIModalPresentationPopover;
     self.preferredContentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height/2);
-    
-    UIPopoverPresentationController *pc = [self popoverPresentationController];
-    pc.sourceRect = CGRectMake(self.view.frame.size.width, self.view.frame.size.height*2, 0.0, 0.0);
-    pc.delegate = self;
-    pc.sourceView = [super view];
-    pc.permittedArrowDirections = 0;
-    
     
     return self;
 }
 
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+
+
+
+-(void) viewDidAppear:(BOOL)animated {
     
-    return UIModalPresentationNone;
+    [_datePicker addTarget:self action:@selector(labelChange) forControlEvents:UIControlEventValueChanged];
+    
 }
+
+-(void) labelChange {
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd-MM-yyyy"];
+    _dateChosen = [NSString stringWithFormat:@"%@",
+                       [df stringFromDate:_datePicker.date]];
+    [self.delegate updateLabelWhenControllerDismissed:_dateChosen];
+}
+
+
+//required methods in UIPickerViewDelegate and UIPickerViewDataSource protocols
 
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -152,6 +169,9 @@
     return _dateArray[row];
     
 }
+
+
+
 
 - (void)submitButtonTouched:(id)sender;
 {

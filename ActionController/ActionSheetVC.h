@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+@protocol UpdateDateLabelDelegate <NSObject>
+
+-(void) updateLabelWhenControllerDismissed: (NSString *) formattedDate;
+
+@end
+
 @interface ActionSheetVC : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource,UIPopoverPresentationControllerDelegate>
 
 - (instancetype)initWithDatePicker;
@@ -19,5 +27,9 @@
 @property (strong, nonatomic) UIPickerView *pickView;
 @property (strong, nonatomic) UIView *toolView;
 @property (strong, nonatomic) NSMutableArray *dateArray;
+
+@property (strong, nonatomic) NSString *dateChosen;
+
+@property (nonatomic, assign) id <UpdateDateLabelDelegate> delegate;
 
 @end

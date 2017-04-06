@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "ActionSheetVC.h"
 
 @interface ViewController () {
     
@@ -20,13 +19,42 @@
 
 @implementation ViewController
 
+-(void) viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    view = [[ActionSheetVC alloc] initWithDatePicker];
+    view.delegate = self;
+    
+}
+
 
 
 - (IBAction)getTheView:(UIButton *)sender {
     
-    view = [[ActionSheetVC alloc] initWithDatePicker];
+    [self setPopOver];
     [self presentViewController:view animated:false completion:nil];
     
+}
+
+-(void) setPopOver {
+    
+    UIPopoverPresentationController *pc = [view popoverPresentationController];
+    pc.sourceRect = CGRectMake(0, self.view.frame.size.height, 0.0, 0.0);
+    pc.delegate = self;
+    pc.sourceView = [super view];
+    pc.permittedArrowDirections = 0;
+}
+
+-(void) updateLabelWhenControllerDismissed:(NSString *)formattedDate {
+    
+    _dateLabel.text = formattedDate;
+    
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    
+    return UIModalPresentationNone;
 }
 
 
